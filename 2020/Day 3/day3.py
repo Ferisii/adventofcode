@@ -15,13 +15,12 @@ def CharCheckerSloper(string_list: list, x_incr: int, y_incr: int, char: str="#"
     return result
 
 @ExecutionTime
-def main():
-    puzzles = [(3,1), (1,1), (5,1), (7,1), (1,2)]
-    results = []
-    
+def main():   
     with open("./input.txt", "r") as content:
         string_list = [x.strip() for x in content.readlines()]
     
+    puzzles = [(3,1), (1,1), (5,1), (7,1), (1,2)]
+    results = []
     for x, y in puzzles:
         results.append(CharCheckerSloper(string_list, x, y))
     

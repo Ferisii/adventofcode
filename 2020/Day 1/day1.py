@@ -7,7 +7,7 @@ solutions = {"Assignment1": [],
              "Assignment2": []}
 
 # Puzzle 1
-with open("./numberlist.txt", "r") as content:
+with open("./input.txt", "r") as content:
     content = content.readlines()
     for line_a in content:
         for line_b in content:
@@ -19,7 +19,7 @@ with open("./numberlist.txt", "r") as content:
                     print(f"Found solution: '{a}' and '{b}' sums up to {target}!\nMultiplying them returns '{a * b}'!")
 
 # Puzzle 2
-with open("./numberlist.txt", "r") as content:
+with open("./input.txt", "r") as content:
     content = content.readlines()
     for line_a in content:
         for line_b in content:

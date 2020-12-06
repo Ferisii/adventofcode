@@ -11,7 +11,7 @@ def FindCombo(num_list: list, target: int, combo: int=2) -> tuple:
 
 @ExecutionTime
 def main():
-    with open("./numberlist.txt", "r") as content:
+    with open("./input.txt", "r") as content:
         num_list = list(map(int, (x.strip() for x in content.readlines())))
     
     puzzle1 = prod(FindCombo(num_list, 2020))
