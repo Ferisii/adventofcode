@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+from aoc_utils import ExecutionTime
 from re import findall
 
 pass_ruleset = {
@@ -78,7 +79,7 @@ def SecurePassportChecker(passport_dict: dict) -> bool:
 
     return True
     
-
+@ExecutionTime
 def main():
     passports = []
     with open("./input.txt", "r") as content:
@@ -92,10 +93,7 @@ def main():
         puzzle2 += SecurePassportChecker(passport)
 
     print(f"Puzzle 1 solution: {puzzle1}\nPuzzle 2 solution: {puzzle2}")
-    
+
 
 if __name__ == "__main__":
-    from time import time
-    start_time = time()
     main()
-    print(f"\nSolved in {round(time() - start_time, 4)} seconds.")

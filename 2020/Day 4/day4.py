@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+from aoc_utils import ExecutionTime
 
 ruleset = {
     "byr": { # Birth year (byr:1926)
@@ -117,6 +118,7 @@ semi_valid = ["ecl", "pid", "eyr", "hcl", "byr", "iyr", "hgt"]
 
 string_list = []
 
+@ExecutionTime
 def main():
     with open("./input.txt", "r") as content:
         lines = [x.strip() for x in content.readlines()]
@@ -144,7 +146,4 @@ def main():
     
 
 if __name__ == "__main__":
-    from time import time
-    start_time = time()
     main()
-    print(f"\nSolved in {round(time() - start_time, 4)} seconds.")

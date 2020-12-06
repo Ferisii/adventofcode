@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+from aoc_utils import ExecutionTime
 from math import prod
 
 def CharCheckerSloper(string_list: list, x_incr: int, y_incr: int, char: str="#") -> int:
@@ -13,6 +14,7 @@ def CharCheckerSloper(string_list: list, x_incr: int, y_incr: int, char: str="#"
     
     return result
 
+@ExecutionTime
 def main():
     puzzles = [(3,1), (1,1), (5,1), (7,1), (1,2)]
     results = []
@@ -27,7 +29,4 @@ def main():
         
 
 if __name__ == "__main__":
-    from time import time
-    start_time = time()
     main()
-    print(f"\nSolved in {round(time() - start_time, 4)} seconds.")

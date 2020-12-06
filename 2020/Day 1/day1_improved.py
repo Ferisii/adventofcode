@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+from aoc_utils import ExecutionTime
 from itertools import combinations
 from math import prod
 
@@ -8,6 +9,7 @@ def FindCombo(num_list: list, target: int, combo: int=2) -> tuple:
             return combo
     raise Exception(f"Found no combo solution!")
 
+@ExecutionTime
 def main():
     with open("./numberlist.txt", "r") as content:
         num_list = list(map(int, (x.strip() for x in content.readlines())))
@@ -19,8 +21,5 @@ def main():
     
 
 if __name__ == "__main__":
-    from time import time
-    start_time = time()
     main()
-    print(f"Solved in {round(time() - start_time, 4)} seconds.")
     

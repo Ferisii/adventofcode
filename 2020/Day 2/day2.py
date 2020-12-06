@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+from aoc_utils import ExecutionTime
 
 def CharCountOrPosChecker(line: str, mode: str="c") -> bool:
     numbers, char, string = line.replace(":","").split(" ")
@@ -9,6 +10,7 @@ def CharCountOrPosChecker(line: str, mode: str="c") -> bool:
         return (string[num1 - 1] == char) + (string[num2 - 1] == char) == 1
     raise Exception(f"'{mode}' is a non-valid mode. Valid modes are: 'c' count, or 'p' position.")
 
+@ExecutionTime
 def main():
     with open("./input.txt", "r") as content:
         lines = [x.strip() for x in content.readlines()]
@@ -20,8 +22,5 @@ def main():
     print(f"Results for puzzle 1: {puzzle1}\nResults for puzzle 2: {puzzle2}")
 
 if __name__ == "__main__":
-    from time import time
-    start_time = time()
     main()
-    print(f"Solved in {round(time() - start_time, 4)} seconds.")
     
