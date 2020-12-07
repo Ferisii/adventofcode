@@ -6,7 +6,7 @@ def ExecutionTime(method):
         result = method(*args, **kwargs)
         finish_time = time()
 
-        print(f"{method.__name__} finished in {finish_time - start_time}")
+        print(f"{method.__name__} finished in {(finish_time - start_time)*1000}ms.")
         
         return result
     
