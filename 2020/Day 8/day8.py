@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
+from aoc_utils import ExecutionTime
 from copy import deepcopy # Copies ALL the content within a list
 
+@ExecutionTime
 def RunUntilEndIsFound(list_of_lines: list, change: tuple=("jmp","nop")) -> int:
     range_of_list = range(len(list_of_lines))
     for tmp_index in range_of_list:
@@ -24,6 +26,7 @@ def RunUntilEndIsFound(list_of_lines: list, change: tuple=("jmp","nop")) -> int:
                 index += int(tmp_lines[index][1])
 
         if index == len(tmp_lines):
+            print(f"index_set={index_set}")
             return accumulation
     
     return 0 # Unlikely the result ever is 0... right?
@@ -44,6 +47,7 @@ def RunUntilRepeat(list_of_lines: list) -> int:
 
     return accumulation
 
+@ExecutionTime
 def main():
     with open("./input.txt") as content:
         list_of_lines = [line.strip().split(" ") for line in content]
