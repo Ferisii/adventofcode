@@ -30,5 +30,5 @@ with open("./input.txt", "r") as content:
                     if solution not in solutions["Assignment2"]:
                         solutions["Assignment2"].append(solution) 
                         print(f"Found solution: '{a}', '{b}' and {c} sums up to {target}!\nMultiplying them returns '{a * b * c}'!")
-print(solutions)
+
 print(f"Solved in {time.time() - start_time}")

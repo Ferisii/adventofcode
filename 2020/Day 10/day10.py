@@ -3,25 +3,25 @@ from aoc_utils import ExecutionTime
 from math import prod
 
 def PartialSumAlgorithm(num_list: list, target_value: int=1) -> list:
-    a_list = list() # Append difference between index1 and index2 to list
+    list_a = list() # Append difference between index1 and index2 to list
     for index in range(len(num_list) - 1): 
-        a_list.append(num_list[index + 1] - num_list[index])
+        list_a.append(num_list[index + 1] - num_list[index])
     
-    b_list = list() # Group together adjacent 1's and append sum of them to list
-    b_value = 0
-    for index in range(len(a_list)):
-        if (value := a_list[index]) == target_value:
-            b_value += value
-        elif b_value > target_value:
-            b_list.append(b_value)
-        b_value = b_value if value == target_value else 0
+    list_b = list() # Group together adjacent 1's and append sum of them to list
+    tmp_value = 0
+    for index in range(len(list_a)):
+        if (value := list_a[index]) == target_value:
+            tmp_value += value
+        elif tmp_value > target_value:
+            list_b.append(tmp_value)
+        tmp_value = tmp_value if value == target_value else 0
     
-    c_list = list() # Find partial sum of each value
-    for index in range(len(b_list)): 
-        n = b_list[index]
-        c_list.append(int((n ** 2 - n) / 2 + 1))
+    list_c = list() # Find partial sum of each value
+    for index in range(len(list_b)): 
+        n = list_b[index]
+        list_c.append(int((n ** 2 - n) / 2 + 1))
         
-    return c_list
+    return list_c
 
 def IntWidthOccurrences(num_list: list, width1: int=1, width2: int=3) -> tuple:
     a, b = 0, 0
